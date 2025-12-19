@@ -6,13 +6,13 @@ function UserData() {
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users/1")
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
         setUser(data);
         setLoading(false);
       })
       .catch((error) => {
-        console.error("Error fetching user data:", error);
+        console.error(error);
         setLoading(false);
       });
   }, []);
